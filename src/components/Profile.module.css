@@ -1,0 +1,12 @@
+.content{
+  background-color: lightgoldenrodyellow;
+  grid-area: c;
+}
+
+.item {
+  color: brown;
+}
+.cover {
+  width: 100%;
+  height: 350px;
+}
