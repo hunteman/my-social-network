@@ -10,20 +10,43 @@ ul{
   list-style-type: none;
 }
 
-.item {
+.item a{
   color: white;
   font-size: 1.2rem;
-}
-
-.active {
-  color: gold;
-}
-
-a {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
   cursor: pointer;
+  position: relative;
+  transition: all 0.6s;
+} 
+
+  .item a::before {
+    content: "";
+    width: 0;
+    height: 0.1em;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    background: rgb(182, 46, 46);
+    transition: all 0.3s;
+  } 
+
+   .item a:hover::before {
+      width: 100%;
+      left: 0;
+      background: rgb(182, 46, 46);
+    }
+
+
+
+
+
+/* a::before {
+ content:'';
+ width: 0;
+ bottom: -5px;
+ color: inherit;
+} */
+
+a:active {
+  color: gold;
 }
