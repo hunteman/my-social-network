@@ -1,0 +1,50 @@
+.nav{
+  padding: 20px;
+  background-color: rgb(189, 189, 189);
+  grid-area: n;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.item a{
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+} 
+
+.item a:hover {
+  color: rgb(182, 46, 46);
+}
+
+.item a::before {
+  content: "";
+  width: 0;
+  height: 0.1em;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  background: rgb(182, 46, 46);
+  transition: all 0.3s;
+} 
+
+.item a:hover::before {
+  width: 100%;
+  left: 0;
+  background: rgb(182, 46, 46);
+}
+
+.item a:active {
+  color: gold;
+}
+
+.item a.active {
+  color: rgb(182, 46, 46);
+}
