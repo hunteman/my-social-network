@@ -1,17 +1,29 @@
+body *{
+    box-sizing: border-box;
+}
+
 .app-wrapper {
     width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-areas: "h h" "n c";
     grid-template-rows: 80px 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 1fr 5fr;
     grid-gap: 10px;
 }
 
 .app-wrapper-content {
     background-color: lightgoldenrodyellow;
     grid-area: c;
+    max-width: 1000px;
+    color: brown;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
+
+span.material-icons {
+    margin-right: 0.5rem;
+    vertical-align: text-bottom;
+  }
 
 
 

@@ -13,8 +13,9 @@ const App = (props) => {
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+                    {/* Атрибут render вместо component позволяет вызвать ф-цию и передать не компонент целиком, а jsx разметку и пропсы в ней*/}
+                    <Route path='/profile' render={() => <Profile />}/>
+                    <Route exact path='/dialogs' render={() => <Dialogs />}/>
                 </div>
             </div>
         </BrowserRouter>

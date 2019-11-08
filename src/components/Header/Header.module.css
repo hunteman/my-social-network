@@ -6,4 +6,5 @@
   padding: 10px;
   background-color: rgb(189, 189, 189);
   grid-area: h;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
