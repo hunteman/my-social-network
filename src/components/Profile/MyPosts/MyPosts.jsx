@@ -4,14 +4,9 @@ import Post from './Post/Post';
 import Button from '@material-ui/core/Button';
 
 const MyPosts = (props) => {
+    debugger;
 
-    let posts = [
-        { id: 1, message: 'Hi, how are you?', likesCount: '16' },
-        { id: 2, message: 'Bla-bla', likesCount: '2' },
-        { id: 3, message: "It's my first post", likesCount: '29' }
-    ]
-
-    let postsElements = posts.map(
+    let postsElements = props.posts.map(
         p => <Post message={p.message} likesCount={p.likesCount} />
     );
 
