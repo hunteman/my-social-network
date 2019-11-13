@@ -18,7 +18,9 @@ button.addButton:hover {
 }
 
 textarea {
-    width: 100%;
+    min-height: 8rem;
+    max-height: 50rem;
+    min-width: 100%;
     max-width: 100%;
 }
 

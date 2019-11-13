@@ -1,9 +1,12 @@
 .dialogs {
      display: grid;
+     grid-template-areas: "d m" "n n";
+     grid-template-rows: 1fr 1fr;
      grid-template-columns: 1fr 5fr;
  }
 
 .dialogsItems {
+    grid-area: d;
     padding: 20px;
 }
 
@@ -16,9 +19,38 @@
 }
 
 .messages {
+    grid-area: m;
     padding: 20px;
 }
 
 .message {
 
+}
+
+/* ********************************** */
+.newPost {
+    grid-area: n;
+    padding: 20px;
+}
+
+button.addButton {
+    margin: 0.5rem 0;
+    padding: 5px 20px;
+    display: block;
+    color: white;
+    background-color: rgb(182, 46, 46);
+    border-radius: 5px;
+    outline: none;
+}
+
+button.addButton:hover {
+    background-color: rgba(182, 46, 46,0.85);
+}
+
+textarea {
+    top: 0;
+    min-height: 8rem;
+    max-height: 50rem;
+    min-width: 100%;
+    max-width: 100%;
 }

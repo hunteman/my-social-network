@@ -1,4 +1,4 @@
-body *{
+*{
     box-sizing: border-box;
 }
 
@@ -15,7 +15,7 @@ body *{
 .app-wrapper-content {
     background-color: lightgoldenrodyellow;
     grid-area: c;
-    max-width: 1000px;
+    max-width: 990px;
     color: brown;
     box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
