@@ -2,6 +2,7 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import Button from '@material-ui/core/Button';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../Redux/profile-reducer';
 
 const MyPosts = (props) => {
 
@@ -11,14 +12,13 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+    let onAddPost = () => {
+        props.addPost();
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
-        props.dispatch(action);
+        props.updateNewPostText(text);
     }
 
     return (
@@ -26,7 +26,7 @@ const MyPosts = (props) => {
             <h3>My posts</h3>
             <div>
                 <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-                <Button variant="contained" className={s.addButton} onClick={addPost}>Add post</Button>
+                <Button variant="contained" className={s.addButton} onClick={onAddPost}>Add post</Button>
             </div>
             <div className={s.posts}>
                 {postsElements}

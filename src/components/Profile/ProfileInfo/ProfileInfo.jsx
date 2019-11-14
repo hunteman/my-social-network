@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
       <main>
         <div>
-          <img className={s.cover} src="http://cdn.cnn.com/cnnnext/dam/assets/170407220916-04-iconic-mountains-matterhorn-restricted.jpg"/>
+          <img className={s.cover} src="http://cdn.cnn.com/cnnnext/dam/assets/170407220916-04-iconic-mountains-matterhorn-restricted.jpg" alt="background" />
         </div>
         <div className={s.descriptionBlock}>
           ava + description

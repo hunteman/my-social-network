@@ -3,23 +3,31 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import Button from '@material-ui/core/Button';
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../Redux/dialogs-reducer';
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map(
+    let state = props.dialogsPage;
+
+    let dialogsElements = state.dialogs.map(
         dialog => <DialogItem name={dialog.name} id={dialog.id} />
     );
 
-    let messagesElements = props.state.messages.map(
+    let messagesElements = state.messages.map(
         m => <Message message={m.message} />
     );
 
-    let newPostElement = React.createRef();
+    let newMessageBody = state.newMessageBody;
 
-    let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
+    let onSendMessageClick = () => {
+        props.sendMessage();
     }
+
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.updateNewMessageBody(body);
+    }
+
 
     return (
         <div className={s.dialogs}>
@@ -27,12 +35,18 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={s.messages}>
-                {messagesElements}
+                <div>{messagesElements}</div>
+                <div>
+                    <textarea value={newMessageBody} 
+                    onChange={onNewMessageChange}
+                    placeholder='Enter your message'></textarea>
+                    <Button variant="contained" className={s.addButton} onClick={onSendMessageClick}>Send</Button>
+                </div>
             </div>
-            <div className={s.newPost}>
-                <textarea ref={newPostElement}></textarea>
-                <Button variant="contained" className={s.addButton} onClick={addPost}>Add post</Button>
-            </div>
+            {/* <div className={s.newPost}>
+                <textarea ref={newPostElement} placeholder='Enter your message'></textarea>
+                <Button variant="contained" className={s.addButton} onClick={()=>{alert('Hello')}}>Add post</Button>
+            </div> */}
         </div>
     );
 }
