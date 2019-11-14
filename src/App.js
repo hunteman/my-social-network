@@ -14,9 +14,9 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
                     {/* Атрибут render вместо component позволяет вызвать ф-цию и передать не компонент целиком, а jsx разметку и пропсы в ней*/}
                     <Route path='/profile' 
-                        render={() => <Profile store={props.store} />}/>
+                        render={() => <Profile />}/>
                     <Route exact path='/dialogs' 
-                        render={() => <DialogsContainer store={props.store} />}/>
+                        render={() => <DialogsContainer />}/>
                 </div>
             </div>
     )
